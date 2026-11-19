@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atdev-billing-ecosystem"
+version = "0.1.0"
+description = "Central plan catalog and entitlement service for AtDev projects"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "BSD-2-Clause" }
+dependencies = [
+  "fastapi>=0.110,<1.0",
+  "uvicorn[standard]>=0.27,<1.0",
+  "pydantic>=2.6,<3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
